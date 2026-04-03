@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
 
-public class BearItem : MonoBehaviour, IPointerClickHandler
+public class Item : MonoBehaviour, IPointerClickHandler
 {
     public InventoryManager inventoryManager;
 
@@ -13,7 +13,6 @@ public class BearItem : MonoBehaviour, IPointerClickHandler
 
     void Start()
     {
-        // Save correct UI position
         originalParent = transform.parent;
         originalLocalPosition = transform.localPosition;
     }
@@ -38,7 +37,6 @@ public class BearItem : MonoBehaviour, IPointerClickHandler
 
         Vector3 startPos = rect.position;
 
-        // Temporarily move under original parent BEFORE animating
         transform.SetParent(originalParent, false);
 
         Vector3 endPos = ((RectTransform)originalParent).TransformPoint(originalLocalPosition);
@@ -53,7 +51,6 @@ public class BearItem : MonoBehaviour, IPointerClickHandler
             yield return null;
         }
 
-        // Snap perfectly
         transform.localPosition = originalLocalPosition;
     }
 }
