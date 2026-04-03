@@ -4,6 +4,7 @@ using System.Collections;
 public class InventoryManager : MonoBehaviour
 {
     public Transform[] slots;
+    public Transform canvasRoot; // ?? drag your Canvas here
 
     public void AddItem(GameObject item)
     {
@@ -21,26 +22,26 @@ public class InventoryManager : MonoBehaviour
 
     IEnumerator MoveToSlot(GameObject item, Transform slot)
     {
-        RectTransform itemRect = item.GetComponent<RectTransform>();
+        RectTransform rect = item.GetComponent<RectTransform>();
 
-        Vector3 startPos = itemRect.position;
+        Vector3 startPos = rect.position;
         Vector3 endPos = slot.position;
 
-        float duration = 0.5f; // ?? speed (increase = slower)
+        float duration = 0.5f;
         float time = 0;
+
+        // ?? STEP 1: move to top canvas so it's visible
+        item.transform.SetParent(canvasRoot, true);
 
         while (time < duration)
         {
-            itemRect.position = Vector3.Lerp(startPos, endPos, time / duration);
+            rect.position = Vector3.Lerp(startPos, endPos, time / duration);
             time += Time.deltaTime;
             yield return null;
         }
 
-        // Snap to final position
-        itemRect.position = endPos;
-
-        // Parent AFTER animation
+        // ?? STEP 2: snap into slot AFTER animation
         item.transform.SetParent(slot, false);
-        item.transform.localPosition = Vector3.zero;
+        rect.localPosition = Vector3.zero;
     }
 }

@@ -7,6 +7,7 @@ public class Item : MonoBehaviour, IPointerClickHandler
     public InventoryManager inventoryManager;
 
     private bool isCollected = false;
+    private bool isMoving = false;
 
     private Transform originalParent;
     private Vector3 originalLocalPosition;
@@ -19,6 +20,8 @@ public class Item : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (isMoving) return;
+
         if (!isCollected)
         {
             inventoryManager.AddItem(gameObject);
@@ -33,6 +36,8 @@ public class Item : MonoBehaviour, IPointerClickHandler
 
     IEnumerator MoveBack()
     {
+        isMoving = true;
+
         RectTransform rect = GetComponent<RectTransform>();
 
         Vector3 startPos = rect.position;
@@ -52,5 +57,7 @@ public class Item : MonoBehaviour, IPointerClickHandler
         }
 
         transform.localPosition = originalLocalPosition;
+
+        isMoving = false;
     }
 }
