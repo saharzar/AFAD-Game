@@ -5,10 +5,10 @@ using System.Collections;
 public class Item : MonoBehaviour, IPointerClickHandler
 {
     public InventoryManager inventoryManager;
+    public string itemName;
 
     private bool isCollected = false;
     private bool isMoving = false;
-
     private Transform originalParent;
     private Vector3 originalLocalPosition;
 
@@ -24,11 +24,22 @@ public class Item : MonoBehaviour, IPointerClickHandler
 
         if (!isCollected)
         {
-            inventoryManager.AddItem(gameObject);
-            isCollected = true;
+            bool added = inventoryManager.AddItem(gameObject);
+            if (added) isCollected = true;
         }
         else
         {
+            inventoryManager.RemoveItem(itemName);
+            StartCoroutine(MoveBack());
+            isCollected = false;
+        }
+    }
+
+    public void ForceReturn()
+    {
+        if (isCollected)
+        {
+            inventoryManager.RemoveItem(itemName);
             StartCoroutine(MoveBack());
             isCollected = false;
         }
@@ -37,13 +48,10 @@ public class Item : MonoBehaviour, IPointerClickHandler
     IEnumerator MoveBack()
     {
         isMoving = true;
-
         RectTransform rect = GetComponent<RectTransform>();
-
         Vector3 startPos = rect.position;
 
         transform.SetParent(originalParent, false);
-
         Vector3 endPos = ((RectTransform)originalParent).TransformPoint(originalLocalPosition);
 
         float duration = 0.5f;
@@ -57,7 +65,6 @@ public class Item : MonoBehaviour, IPointerClickHandler
         }
 
         transform.localPosition = originalLocalPosition;
-
         isMoving = false;
     }
 }
