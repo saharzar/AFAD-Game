@@ -10,7 +10,7 @@ public class WorldSelectManager : MonoBehaviour
     public Button btnSonrasi;
 
     [Header("Scene Names")]
-    public string oncesiScene = "SampleScene";
+    public string oncesiScene = "BeforeLevelsScene";
     public string anindaScene = "AnindaScene";
     public string sonrasiScene = "SonrasiScene";
 

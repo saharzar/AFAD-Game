@@ -627,12 +627,9 @@ MonoBehaviour:
   btnOncesi: {fileID: 1084147785}
   btnAninda: {fileID: 2068964998}
   btnSonrasi: {fileID: 1781745949}
-  canvasGroup: {fileID: 1849706098}
-  oncesiScene: SampleScene
+  oncesiScene: BeforeLevelsScene
   anindaScene: AnindaScene
   sonrasiScene: SonrasiScene
-  fadeInDuration: 0
-  fadeOutDuration: 0
 --- !u!4 &1687471615
 Transform:
   m_ObjectHideFlags: 0

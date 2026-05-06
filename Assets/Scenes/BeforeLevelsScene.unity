@@ -666,7 +666,7 @@ MonoBehaviour:
   - missionName: Evdeki Tehlikeleri Bul
     missionDescription: Evdeki tehlikeleri ogrenelim
     missionIcon: {fileID: 0}
-    sceneToLoad: 
+    sceneToLoad: HousedangerousInstruction
   - missionName: 
     missionDescription: 
     missionIcon: {fileID: 0}
