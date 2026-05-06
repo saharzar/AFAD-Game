@@ -670,7 +670,7 @@ MonoBehaviour:
   - missionName: 
     missionDescription: 
     missionIcon: {fileID: 0}
-    sceneToLoad: SampleScene
+    sceneToLoad: AcilCantaInstruction
   - missionName: 
     missionDescription: 
     missionIcon: {fileID: 0}
