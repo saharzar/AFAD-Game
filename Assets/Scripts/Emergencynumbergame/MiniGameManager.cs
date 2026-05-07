@@ -1,13 +1,15 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Question
 {
     public Sprite picture;
     public string description;
-    public int correctAnswer; // 0 = 112, 1 = 110, 2 = 155
+    public int correctAnswer;
 }
 
 public class MiniGameManager : MonoBehaviour
@@ -16,7 +18,9 @@ public class MiniGameManager : MonoBehaviour
     public Image questionImage;
     public TMP_Text questionText;
     public TMP_Text scoreText;
-    public GameObject congratulationsScreen;
+
+    [Header("Congratulations")]
+    public CanvasGroup congratulationsScreen;
 
     [Header("Questions")]
     public Question[] questions;
@@ -28,27 +32,33 @@ public class MiniGameManager : MonoBehaviour
     {
         ShowQuestion(0);
         UpdateScore();
-        congratulationsScreen.SetActive(false);
+
+        // Start invisible
+        congratulationsScreen.alpha = 0;
+        congratulationsScreen.interactable = false;
+        congratulationsScreen.blocksRaycasts = false;
     }
 
     public void OnAnswer(int answerIndex)
     {
-        Debug.Log("Button clicked: " + answerIndex);
+        if (currentQuestion >= questions.Length)
+            return;
+
         if (answerIndex == questions[currentQuestion].correctAnswer)
         {
             score++;
             UpdateScore();
-        }
 
-        currentQuestion++;
+            currentQuestion++;
 
-        if (currentQuestion < questions.Length)
-        {
-            ShowQuestion(currentQuestion);
-        }
-        else
-        {
-            ShowCongratulations();
+            if (currentQuestion < questions.Length)
+            {
+                ShowQuestion(currentQuestion);
+            }
+            else
+            {
+                StartCoroutine(FadeCongratulations());
+            }
         }
     }
 
@@ -63,8 +73,27 @@ public class MiniGameManager : MonoBehaviour
         scoreText.text = score + "/" + questions.Length;
     }
 
-    void ShowCongratulations()
+    IEnumerator FadeCongratulations()
     {
-        congratulationsScreen.SetActive(true);
+        congratulationsScreen.interactable = true;
+        congratulationsScreen.blocksRaycasts = true;
+
+        float duration = 1f;
+        float time = 0;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+
+            congratulationsScreen.alpha = Mathf.Lerp(0, 1, time / duration);
+
+            yield return null;
+        }
+
+        congratulationsScreen.alpha = 1;
+    }
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("BeforeLevelsScene");
     }
 }
