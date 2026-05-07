@@ -675,7 +675,7 @@ MonoBehaviour:
     missionDescription: 
     missionIcon: {fileID: 0}
     sceneToLoad: 
-  - missionName: 
+  - missionName: Acil Durum telefonlari
     missionDescription: 
     missionIcon: {fileID: 0}
     sceneToLoad: 
@@ -1063,6 +1063,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MissionButton_1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3655081178699198424, guid: de363954e829c9b479f5fb95368d319b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3655081178699198424, guid: de363954e829c9b479f5fb95368d319b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -231
+      objectReference: {fileID: 0}
+    - target: {fileID: 3655081178699198424, guid: de363954e829c9b479f5fb95368d319b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5350452403366801370, guid: de363954e829c9b479f5fb95368d319b, type: 3}
       propertyPath: m_Color.b
       value: 0.10980393
@@ -1154,6 +1166,10 @@ PrefabInstance:
     - target: {fileID: 5611709447065171640, guid: de363954e829c9b479f5fb95368d319b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565124529282724941, guid: de363954e829c9b479f5fb95368d319b, type: 3}
+      propertyPath: m_margin.z
+      value: -372.1423
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
