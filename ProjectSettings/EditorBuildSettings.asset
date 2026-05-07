@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BeforeLevelsScene.unity
     guid: 5dffcbd32bb4c5a48bd4830c83e6208e
+  - enabled: 1
+    path: Assets/Scenes/Emergencynumbersgame.unity
+    guid: dff4589794bcdc6418187373d7bf0c10
+  - enabled: 1
+    path: Assets/Scenes/AciltelefonInstruction.unity
+    guid: 2c410d0f09543d04db73a75780057404
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

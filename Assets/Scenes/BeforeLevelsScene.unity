@@ -674,7 +674,7 @@ MonoBehaviour:
   - missionName: 
     missionDescription: 
     missionIcon: {fileID: 0}
-    sceneToLoad: 
+    sceneToLoad: AciltelefonInstruction
   - missionName: Acil Durum telefonlari
     missionDescription: 
     missionIcon: {fileID: 0}
