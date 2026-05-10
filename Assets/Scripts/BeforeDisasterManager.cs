@@ -33,7 +33,7 @@ public class BeforeDisasterManager : MonoBehaviour
     void Start()
     {
         // Remove this line when done testing!
-        // PlayerPrefs.SetInt("BeforeDisaster_Progress", 2);
+        PlayerPrefs.SetInt("BeforeDisaster_Progress", 5);
 
         _completedCount = PlayerPrefs.GetInt(SAVE_KEY, 0);
         RefreshUI();

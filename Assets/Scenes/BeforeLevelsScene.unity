@@ -678,11 +678,11 @@ MonoBehaviour:
   - missionName: Acil Durum telefonlari
     missionDescription: 
     missionIcon: {fileID: 0}
-    sceneToLoad: 
+    sceneToLoad: cikisgame
   - missionName: 
     missionDescription: 
     missionIcon: {fileID: 0}
-    sceneToLoad: 
+    sceneToLoad: alaninstruction
   missionButtons:
   - {fileID: 599067415}
   - {fileID: 882459552}
