@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alangame.unity
     guid: 1960429804dca6647bde87cacbcdff5a
+  - enabled: 1
+    path: Assets/Scenes/Duringpart/Level1_Salon.unity
+    guid: e288f34279043ac46ab07ed280a34a62
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
