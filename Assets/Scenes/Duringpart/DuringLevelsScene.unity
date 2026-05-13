@@ -661,10 +661,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missions:
-  - missionName: Evdeki Tehlikeleri Bul
-    missionDescription: Evdeki tehlikeleri ogrenelim
+  - missionName: 
+    missionDescription: 
     missionIcon: {fileID: 0}
-    sceneToLoad: HousedangerousInstruction
+    sceneToLoad: FirstgameInstruction
   - missionName: 
     missionDescription: 
     missionIcon: {fileID: 0}
@@ -677,8 +677,6 @@ MonoBehaviour:
   - {fileID: 599067415}
   - {fileID: 882459552}
   - {fileID: 1862520814}
-  - {fileID: 0}
-  - {fileID: 0}
   progressBar: {fileID: 546192252}
   progressText: {fileID: 995530689}
   badgeText: {fileID: 1677906823}
