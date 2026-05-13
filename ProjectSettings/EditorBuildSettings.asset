@@ -53,6 +53,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Duringpart/Level3_House.unity
     guid: 9163957cd09ea61408a62254c93957da
+  - enabled: 1
+    path: Assets/Scenes/Duringpart/DuringLevelsScene.unity
+    guid: 0d506c8ab435e05479bde24093111763
+  - enabled: 1
+    path: Assets/Scenes/Duringpart/FirstgameInstruction.unity
+    guid: 95d8f359d55240d4cabfb0e5e3a6d141
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
