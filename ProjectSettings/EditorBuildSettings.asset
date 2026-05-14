@@ -62,6 +62,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Duringpart/FireGameInstruction.unity
     guid: 41af043dc69639440a7c01c0d22162a5
+  - enabled: 1
+    path: Assets/Scenes/Duringpart/FireGame.unity
+    guid: 91ec60fd262630641bcb9c991dc72667
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
