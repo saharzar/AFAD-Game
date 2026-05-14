@@ -668,7 +668,7 @@ MonoBehaviour:
   - missionName: 
     missionDescription: 
     missionIcon: {fileID: 0}
-    sceneToLoad: AcilCantaInstruction
+    sceneToLoad: FireGameInstruction
   - missionName: 
     missionDescription: 
     missionIcon: {fileID: 0}
